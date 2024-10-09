@@ -40,13 +40,19 @@ function mostratError(mensaje){
 function consultarAPI(ciudad,pais){
     const appid= '5e506fee1b93a3f2c2c49258278ab291'
     let url= `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appid}`
+    
+    carga()
+    
     fetch(url)
     .then(respuesta=>{
         //console.log(respuesta)
         return respuesta.json()
+
     })
     .then(datos=>{
         //console.log(datos)
+        limpiarHTML()
+
         if(datos.cod==='404'){
             mostratError('La ciudad no se ha encontrado , ingrese una ciudad validad por favor ')
         }else{
@@ -104,10 +110,12 @@ function gragdoskelvinAC(temperatura){
     return temperatura -273.15
 }
 
-window.onload=function(){
+
+
+function carga(){
     limpiarHTML()
-    var container = document.createElement('loader')
-    //container.classLists.add()
-    container.innerHTML
-    resultado.appendChild(container)
+    const divspinner = document.createElement('div')
+    divspinner.classList.add('spinner')
+    container.innerHTML `<div class="spinner"></div>`
+    resultado.appendChild(divspinner)
 }
