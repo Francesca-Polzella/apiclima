@@ -41,7 +41,7 @@ function consultarAPI(ciudad,pais){
     const appid= '5e506fee1b93a3f2c2c49258278ab291'
     let url= `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appid}`
     
-    carga()
+    spinner();
     
     fetch(url)
     .then(respuesta=>{
@@ -112,10 +112,22 @@ function gragdoskelvinAC(temperatura){
 
 
 
-function carga(){
+function spinner(){
     limpiarHTML()
     const divspinner = document.createElement('div')
-    divspinner.classList.add('spinner')
-    container.innerHTML `<div class="spinner"></div>`
+    divspinner.classList.add('sk-fading-circle')
+    contenedor.innerHTML = `
+    <div class="sk-circle1"></div>
+    <div class="sk-circle2"></div>
+    <div class="sk-circle3"></div>
+    <div class="sk-circle4"></div>
+    <div class="sk-circle5"></div>
+    <div class="sk-circle6"></div>
+    <div class="sk-circle7"></div>
+    <div class="sk-circle8"></div>
+    <div class="sk-circle9"></div>
+    <div class="sk-circle10"></div>
+    <div class="sk-circle11"></div>
+    <div class="sk-circle12"></div>`
     resultado.appendChild(divspinner)
 }
