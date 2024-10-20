@@ -37,6 +37,7 @@ function mostratError(mensaje){
        }
 }
 
+ 
 function consultarAPI(ciudad,pais){
     const appid= '5e506fee1b93a3f2c2c49258278ab291'
     let url= `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appid}`
@@ -114,20 +115,21 @@ function gragdoskelvinAC(temperatura){
 
 function spinner(){
     limpiarHTML()
+    console.log('spinner')
     const divspinner = document.createElement('div')
     divspinner.classList.add('sk-fading-circle')
-    contenedor.innerHTML = `
-    <div class="sk-circle1"></div>
-    <div class="sk-circle2"></div>
-    <div class="sk-circle3"></div>
-    <div class="sk-circle4"></div>
-    <div class="sk-circle5"></div>
-    <div class="sk-circle6"></div>
-    <div class="sk-circle7"></div>
-    <div class="sk-circle8"></div>
-    <div class="sk-circle9"></div>
-    <div class="sk-circle10"></div>
-    <div class="sk-circle11"></div>
-    <div class="sk-circle12"></div>`
+    divspinner.innerHTML = `
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+    <div class="sk-circle5 sk-circle"></div>
+    <div class="sk-circle6 sk-circle"></div>
+    <div class="sk-circle7 sk-circle"></div>
+    <div class="sk-circle8 sk-circle"></div>
+    <div class="sk-circle9 sk-circle"></div>
+    <div class="sk-circle10 sk-circle"></div>
+    <div class="sk-circle11 sk-circle"></div>
+    <div class="sk-circle12 sk-circle"></div>`
     resultado.appendChild(divspinner)
 }
